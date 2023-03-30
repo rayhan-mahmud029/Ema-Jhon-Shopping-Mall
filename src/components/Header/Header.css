@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    height: 80px;
+    background-color: rgb(28, 28, 61);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+}
+
+.navbar img{
+    width: 200px;
+}
+.nav-items{
+    display: flex;
+}
+
+.nav-items a{
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
