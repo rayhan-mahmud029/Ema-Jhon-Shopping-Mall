@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToCart, getStoredData } from '../../../utilities/localDB';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
@@ -14,10 +15,17 @@ const Shop = () => {
         .then(data => setProducts(data))
     },[])
 
+    // side effect to get stored data
+    useEffect( () => {
+        const storedCartData = getStoredData()
+        console.log(storedCartData);
+    },[])
+
     // Add to Cart Handler function
     const handleAddToCart = (product) =>{
         const newArrayOfProducts = [...cart, product];
         setCart(newArrayOfProducts);
+        addToCart(product.id)
     }
 
     return (

@@ -14,6 +14,7 @@ const Cart = ({cart}) => {
     }
     const taxRate = 7;  //percentage
     const totalTax = totalPrice*taxRate/100;
+    const grandTotal = totalPrice + totalShipping + totalTax;
 
     
     return (
@@ -22,8 +23,8 @@ const Cart = ({cart}) => {
              <p>Products added: {cart.length}</p>
              <p>Total Price: {totalPrice}</p>
              <p>Total Shipping: {totalShipping}</p>
-             <p>Tax: {totalTax}</p>
-             <h4>Grand Total: {totalPrice + totalShipping + totalTax}</h4>
+             <p>Tax: {totalTax.toFixed(2)}</p>
+             <h4>Grand Total: {grandTotal.toFixed(2)}</h4>
         </div>
     );
 };
