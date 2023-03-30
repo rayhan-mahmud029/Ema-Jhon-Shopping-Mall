@@ -12,5 +12,8 @@
 
 .shop-cart{
     padding: 30px 10px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
     background-color: #FF99004D;
 }

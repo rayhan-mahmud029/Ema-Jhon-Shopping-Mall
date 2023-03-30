@@ -15,7 +15,7 @@ const Product = (props) => {
 
             <div className="product-description">
             <h4>{name}</h4>
-            <h5 style={{"margin-bottom": "20px"}} >Price: ${price}</h5>
+            <h5 style={{marginBottom: "20px"}} >Price: ${price}</h5>
 
 
             <p>Rating: {ratings}</p>
@@ -24,7 +24,7 @@ const Product = (props) => {
 
             <button onClick={() => handleAddToCart(product)}>
                 Add to Cart 
-                <FontAwesomeIcon icon={faCartFlatbed} style={{"padding-left": "5px"}}/>
+                <FontAwesomeIcon icon={faCartFlatbed} style={{paddingLeft: "5px"}}/>
                 </button>
 
         </div>
