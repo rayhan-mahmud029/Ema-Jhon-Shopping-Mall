@@ -1,9 +1,10 @@
 import React from 'react';
+import './ErrorPage.css'
 
 const ErrorPage = () => {
     return (
-        <div>
-            <h3>Opps! 404 not found.</h3>
+        <div className='error-div'>
+            <h3 className='error-text'>404 | Nothing here to see</h3>
         </div>
     );
 };

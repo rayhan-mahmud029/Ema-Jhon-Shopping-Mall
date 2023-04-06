@@ -1,0 +1,17 @@
+.error-div {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-text {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 62px;
+    line-height: 74px;
+    letter-spacing: -0.005em;
+    color: #2A414F;
+}

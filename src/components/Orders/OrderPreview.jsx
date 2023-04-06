@@ -3,8 +3,9 @@ import './OrderPreview.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartFlatbed, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-const OrderPreview = ({ previewItem }) => {
-    const { name, price, shipping, quantity, img } = previewItem;
+const OrderPreview = ({ previewItem, handleDeleteOrderItem }) => {
+
+    const { name, price, shipping, quantity, img, id } = previewItem;
 
     return (
         <div className='preview-card'>
@@ -20,7 +21,9 @@ const OrderPreview = ({ previewItem }) => {
                     <p>Quantity: {quantity}</p>
                 </div>
                 <div>
-                   <button> <FontAwesomeIcon icon={faTrashAlt} className='delete-btn'/> </button>
+                    <button onClick={() => handleDeleteOrderItem(id)}>
+                        <FontAwesomeIcon icon={faTrashAlt} className='delete-btn' />
+                    </button>
                 </div>
             </div>
 

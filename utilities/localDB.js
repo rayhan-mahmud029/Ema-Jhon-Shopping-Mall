@@ -33,6 +33,17 @@ const getStoredData = () =>{
     return storeDataObject;
 }
 
+const deleteStoredDataById = (id) =>{
+    const storedData = getStoredData();
+    console.log(storedData);
+    delete storedData[id];
+    localStorage.setItem('shopping-cart', JSON.stringify(storedData));
+}
 
 
-export {addToCart, getStoredData};
+const deleteCart = () => {
+    localStorage.removeItem('shopping-cart');
+}
+
+
+export {addToCart, getStoredData, deleteStoredDataById, deleteCart};

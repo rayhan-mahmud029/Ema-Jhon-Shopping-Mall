@@ -27,6 +27,11 @@
     background: none;
     background-color:  rgba(235, 87, 87, 0.3);
     border: 0;
+    cursor: pointer;
+}
+
+.preview-details button:hover{
+    border: 1px solid purple;
 }
 
 .delete-btn{
