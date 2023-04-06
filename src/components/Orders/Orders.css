@@ -1,0 +1,22 @@
+.orders-container{
+    width: 80%;
+    margin: 50px auto;
+    height: 100vh;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.orders-cart{
+    padding: 50px 20px;
+    background-color: rgba(255, 153, 0, 0.3);
+    border-radius: 18px;
+    width: 100%;
+    flex: 1;
+}
+
+.all-orders{
+    flex: 2;
+    width: 100%;
+}

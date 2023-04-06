@@ -17,13 +17,41 @@ const Shop = () => {
 
     // side effect to get stored data
     useEffect( () => {
-        const storedCartData = getStoredData()
-        console.log(storedCartData);
-    },[])
+        const storedCartData = getStoredData();
+        let saveCart = [];
+        let quantity;
+        
+    
+        for (const id in storedCartData){
+            console.log(id);
+            const addedProduct = products.find(product => product.id === id);
+
+            if (addedProduct){
+                const productQuantity = storedCartData[id];
+                addedProduct.quantity = productQuantity;
+                // add the addedProducts in saveCart
+                saveCart.push(addedProduct)
+            }
+        }
+
+        console.log(saveCart);
+        // set the cart
+        setCart(saveCart)
+    },[products])
 
     // Add to Cart Handler function
     const handleAddToCart = (product) =>{
-        const newArrayOfProducts = [...cart, product];
+        let newArrayOfProducts;
+        const exists = cart.find(pd => pd.id === product.id);
+        if (!exists){
+            product.quantity = 1
+            newArrayOfProducts = [...cart, product];
+        }
+        else{
+            exists.quantity = exists.quantity + 1;
+            const remainingProds = cart.filter(pd => pd.id != product.id);
+            newArrayOfProducts = [...remainingProds, exists]
+        }
         setCart(newArrayOfProducts);
         addToCart(product.id)
     }
